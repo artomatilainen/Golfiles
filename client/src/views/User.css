@@ -1,0 +1,19 @@
+.user-info-block {
+    background-color: burlywood;
+    max-width: 1400px;
+    padding: 20px;
+    border-radius: 50px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.user-scores-block {
+    background-color: burlywood;
+    max-width: 1400px;
+    padding: 20px;
+    border-radius: 50px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}

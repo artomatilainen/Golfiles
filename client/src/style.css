@@ -1,0 +1,51 @@
+/* style.css */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  
+  .button-container {
+    display: flex;
+    margin-top: 10px;
+  }
+  
+  .button-space {
+    width: 5px;
+  }
+  
+  .page-content {
+    min-height: 100vh;
+    margin-top: 50px;
+    padding: 10px;
+  }
+  
+  .container{
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #b9b9b9;
+    padding: 50px;
+    border-radius: 5px;
+  }
+  
+  .auth-form{
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+  
+  input {
+    margin-bottom: 25px;
+    display:block;
+  }
+  
+  label {
+    display:block;
+  }
