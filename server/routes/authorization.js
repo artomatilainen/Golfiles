@@ -19,12 +19,14 @@ router.post('/register', upload.none(), async (req, res) => {
         const pwHash = await bcrypt.hash(pw, 10);
         const userid = await register(username, pwHash);
         const token = createToken(userid, username);
+        console.log("UserID: ", userid);
         res.status(200).json({
             jwtToken: token,
             userid: userid
         });
     } catch (err) {
-        res.status(500).json({ error: err.message });
+        console.error("Error during registration:", err);
+        res.status(500).json({ error: "Error during registration." });
     }
 });
 

@@ -17,7 +17,6 @@ function auth(req, res, next) {
         console.log(token);
         const userdata = jwt.verify(token, process.env.JWT_SECRET_KEY);
         //const username = jwt.verify(token, process.env.JWT_SECRET_KEY).username;
-
         res.locals.userid = userdata.userid;
         res.locals.username = userdata.username;
         next();
