@@ -6,7 +6,6 @@ import '../style.css';
 const Signup = () => {
     const [username, setUsername] = useState('');
     const [pw, setPw] = useState('');
-    const [errorMessage, setErrorMessage] = useState('');
 
     const signup = () => {
         const formData = new FormData();
@@ -16,18 +15,13 @@ const Signup = () => {
         axios.post('/auth/register', formData)
             .then(resp => {
                 jwtToken.value = resp.data.jwtToken;
-                // Reset error message on successful registration
-                setErrorMessage('');
+                // Show success alert
+                alert('Registration successful!'); 
             })
             .catch(error => {
-                if (error.response && error.response.status === 409) {
-                    // HTTP 409 (Conflict) indicates that the username is already in use
-                    setErrorMessage('Username is already taken. Please choose another.');
-                } else {
-                    // Handle other errors
-                    console.error(error.message);
-                    setErrorMessage('Registration failed. Please try again.');
-                }
+                console.error(error.message);
+                // Show error alert
+                alert('Username already exists. Please choose another.');
             });
     };
 
@@ -39,7 +33,6 @@ const Signup = () => {
                     <input placeholder='Username' type='text' onChange={e => setUsername(e.target.value)} /><br />
                     <input placeholder='Password' type='password' onChange={e => setPw(e.target.value)} /><br />
                     <button onClick={signup}>Sign up</button>
-                    {errorMessage && <p className="error-message">{errorMessage}</p>}
                 </div>
             </div>
         </>
