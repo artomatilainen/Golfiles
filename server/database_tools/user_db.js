@@ -7,13 +7,13 @@ const sql = {
 }
 
 /**
- * Get one user by username or all users if username not defined.
+ * Get one user by userid or all users if userid not defined.
  */
-async function getUser(username) {
+async function getUser(userid) {
 
-    if (username) {
+    if (userid) {
         // Return one user.
-        let result = await pgPool.query(sql.GET_USER, [username]);
+        let result = await pgPool.query(sql.GET_USER, [userid]);
         return result.rowCount > 0 ? result.rows : null;
     }
 
