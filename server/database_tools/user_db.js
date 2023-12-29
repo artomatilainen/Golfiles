@@ -2,12 +2,12 @@ const { use } = require('chai');
 const pgPool = require('./pg_connection');
 
 const sql = {
-    GET_USER: 'SELECT username, create_time FROM users WHERE "userid"=$1',
-    GET_ALL_USERS: 'SELECT username, create_time FROM users',    
+    GET_USER: 'SELECT userid, username, create_time FROM users WHERE userid=$1',
+    GET_ALL_USERS: 'SELECT userid, username, create_time FROM users',    
 }
 
 /**
- * Get one user by userid or all users if userid not defined.
+ * Get one user by username or all users if username not defined.
  */
 async function getUser(userid) {
 

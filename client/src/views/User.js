@@ -1,19 +1,21 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { userInfo } from '../components/Signals';
 import '../style.css';
 import './User.css';
 import axios from "axios";
 
 const User = () => {
-    const userid = userid.value;
-    console.log('userId: ', userid);
+
+    const { id } = useParams();
     const [userData, setUserData] = useState([]);
+    const [scoreData, setScoreData] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const userDataResponse = await axios.get(`/user/${userid}`);
+                const userDataResponse = await axios.get(`/user/user/{$id}`);
+                console.log('setUserData: ', userDataResponse.data);
                 setUserData(userDataResponse.data);
             } catch (error) {
                 console.log(error.message);
@@ -22,7 +24,7 @@ const User = () => {
         }
 
         fetchData();
-    }, [userid]); // Include 'id' as a dependency to rerun the effect when the ID changes
+    }, [id]);
 
     return (
         <div>

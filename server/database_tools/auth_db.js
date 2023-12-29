@@ -32,7 +32,7 @@ async function getPw(username) {
 
     if (result.rows.length > 0) {
         return {
-            userid: result.rows[0].userid, // Corrected from result.rows[0].id to result.rows[0].userid
+            userid: result.rows[0].userid,
             pw: result.rows[0].pw
         };
     } else {

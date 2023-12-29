@@ -31,7 +31,7 @@ router.post('/register', upload.none(), async (req, res) => {
 });
 
 /**
- * Login user and return JWT token as response. Token contains username.
+ * Login user and return JWT token as response. Token contains username and userid.
  */
 router.post('/login', upload.none(), async (req, res) => {
     const username = req.body.username;
@@ -46,7 +46,11 @@ router.post('/login', upload.none(), async (req, res) => {
             const isAuth = await bcrypt.compare(pw, db_pw);
             if (isAuth) {
                 const token = createToken(db_userid, username);
-                res.status(200).json({ jwtToken: token });
+                res.status(200).json({
+                    userId: db_userid,
+                    username: username,
+                    jwtToken: token,
+                });
             } else {
                 res.status(401).end('User not authorized');
             }
