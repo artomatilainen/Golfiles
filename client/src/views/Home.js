@@ -26,6 +26,7 @@ const Home = () => {
   return (
     <div>
       <h1>Welcome to Golfiles!</h1>
+      <p><p>Hello World!</p></p>
       {userInformation && (
         <Fragment>
           <p>Username: {userInformation.username}</p>

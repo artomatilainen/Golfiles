@@ -21,5 +21,20 @@
     "preact": "^10.19.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/artomatilainen/Golfiles.git"
+  },
+  "keywords": [
+    "beta",
+    "golf",
+    "web",
+    "app"
+  ],
+  "bugs": {
+    "url": "https://github.com/artomatilainen/Golfiles/issues"
+  },
+  "homepage": "https://github.com/artomatilainen/Golfiles#readme"
 }
