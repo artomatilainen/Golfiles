@@ -1,3 +1,5 @@
+// login.js
+
 import React from 'react';
 import { useState } from 'react';
 import axios from 'axios';
@@ -12,10 +14,10 @@ const Login = () => {
         try {
             const resp = await axios.postForm('/auth/login', { username, pw });
 
-            console.log('Resp: ', resp.data);
+            console.log('Response (login): ', resp.data);
             // Update userInfo and userId
             userInfo.value = {
-                userId: resp.data.userId,
+                userid: resp.data.userid,
                 username: resp.data.username,
             };
             console.log('UserInfo (login): ', userInfo.value);

@@ -21,7 +21,7 @@ export default function NavigationBar() {
                   <Link to={'/about'} className='nav-link'>About</Link>
                </li>
                <li className="nav-item">
-                  <Link to={'/user'} className='nav-link'>Profile</Link>
+                  <Link to={'/user'} className='nav-link'>User profile</Link>
                </li>
                <li className="nav-item">
                   <Link to={'/login'} className='nav-link'>Login</Link>

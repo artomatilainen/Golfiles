@@ -19,7 +19,7 @@ router.post('/register', upload.none(), async (req, res) => {
         const pwHash = await bcrypt.hash(pw, 10);
         const userid = await register(username, pwHash);
         const token = createToken(userid, username);
-        console.log("UserID: ", userid);
+        console.log("UserID (register): ", userid);
         res.status(200).json({
             jwtToken: token,
             userid: userid
@@ -47,7 +47,7 @@ router.post('/login', upload.none(), async (req, res) => {
             if (isAuth) {
                 const token = createToken(db_userid, username);
                 res.status(200).json({
-                    userId: db_userid,
+                    userid: db_userid,
                     username: username,
                     jwtToken: token,
                 });

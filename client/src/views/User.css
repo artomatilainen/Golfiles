@@ -1,19 +1,43 @@
-.user-info-block {
-    background-color: burlywood;
-    max-width: 1400px;
+.user-info-block,
+.user-scores-block {
+    background-color: #fff;
+    max-width: 800px;
+    margin: 20px auto;
     padding: 20px;
-    border-radius: 50px;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.user-scores-block {
-    background-color: burlywood;
-    max-width: 1400px;
-    padding: 20px;
-    border-radius: 50px;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
+.user-info-block h2,
+.user-scores-block h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.user-info-block table,
+.user-scores-block table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.user-info-block th,
+.user-scores-block th,
+.user-info-block td,
+.user-scores-block td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.user-info-block th,
+.user-scores-block th {
+    background-color: #f2f2f2;
+}
+
+/* Optional: Add hover effect to table rows */
+.user-info-block tbody tr:hover,
+.user-scores-block tbody tr:hover {
+    background-color: #f9f9f9;
 }
