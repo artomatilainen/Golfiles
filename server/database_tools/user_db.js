@@ -2,8 +2,8 @@ const { use } = require('chai');
 const pgPool = require('./pg_connection');
 
 const sql = {
-    GET_USER: 'SELECT userid, username, create_time FROM users WHERE userid=$1',
-    GET_ALL_USERS: 'SELECT userid, username, create_time FROM users',    
+    GET_USER: 'SELECT userid, username, create_time, gender, age, hand FROM users WHERE userid=$1',
+    GET_ALL_USERS: 'SELECT userid, username, create_time, gender, age, hand FROM users',    
 }
 
 /**
